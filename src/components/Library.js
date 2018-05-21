@@ -2,7 +2,7 @@ import React from 'react';
 
 const Library = () => (
   <section className="library">
-    Library will go here
+    Library page will go here
   </section>
 );
 
