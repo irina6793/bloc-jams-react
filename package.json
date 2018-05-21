@@ -1,19 +1,18 @@
 {
-<<<<<<< HEAD
+
   "name": "react-to-do",
-=======
+
   "name": "bloc-jams-react",
->>>>>>> 04e7bfed81324353d4c819f4d8c57bbb7f998ce0
+
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-<<<<<<< HEAD
-=======
+
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
->>>>>>> 04e7bfed81324353d4c819f4d8c57bbb7f998ce0
+
     "react-scripts": "1.1.4"
   },
   "scripts": {
@@ -22,8 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
-<<<<<<< HEAD
+
 }
-=======
+
 }
->>>>>>> 04e7bfed81324353d4c819f4d8c57bbb7f998ce0
