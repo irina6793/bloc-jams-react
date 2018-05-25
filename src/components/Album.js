@@ -31,16 +31,17 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
-           <section className="songs"/>
+           <section className="songs">
             {
            this.state.songs.map( (song, index) =>
              <div id>{song.title} {song.duration} {song.number}</div>
           )
         }
-
+}
       </section>
           </tbody>
         </table>
     </section>
+  )
 }
  export default Album;
