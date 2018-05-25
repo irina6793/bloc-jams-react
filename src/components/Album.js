@@ -37,9 +37,10 @@ class Album extends Component {
              <div id>{song.title} {song.duration} {song.number}</div>
           )
         }
-      }
+
+      </section>
           </tbody>
         </table>
-       </section>
-
+    </section>
+}
  export default Album;
