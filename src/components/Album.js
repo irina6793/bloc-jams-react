@@ -37,7 +37,7 @@ class Album extends Component {
           </tbody>
         </table>
        </section>
-     );
+     )
    }
  }
  export default Album;
