@@ -11,11 +11,12 @@ class Album extends Component {
 
      this.state = {
        album: album,
-       songs: []
+       songs: [],
      };
    }
    render() {
      return (
+       <div>
        <section className="album">
          <section id="album-info">
          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
@@ -26,11 +27,11 @@ class Album extends Component {
            </div>
          </section>
          <table id="song-list">
-         <tr>
-           <ul class={songs} key={index}>
-         {
-           this.state.album.songs.map((songs, index) =>
-             <li key>{song.title}</li>
+          {
+           this.state.album.songs.map((song, index) =>
+          <tr>
+          <ul class={song} key={index}>
+             <li>{song.title}</li>
              <li>{song.number}</li>
              <li>{song.duration.length}</li>
           </ul>
@@ -42,17 +43,9 @@ class Album extends Component {
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
-          <tbody>
-           <section className="songs">
-            {this.state.songs.map( (song, index) =>
-             <div id>{song.title} {song.duration} {song.number}</div>
-          )
-        }
-
-      </section>
-          </tbody>
         </table>
-    </section>
+      </section>
+    </div>
   )
 }
 }
