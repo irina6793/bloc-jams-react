@@ -32,8 +32,8 @@ class Album extends Component {
           <tr>
           <ul class={song} key={index}>
              <li>{song.title}</li>
-             <li>{song.number}</li>
-             <li>{song.duration.length}</li>
+             <li>{index + 1}</li>
+             <li>{song.duration}</li>
           </ul>
         </tr>
          )
