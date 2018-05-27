@@ -66,8 +66,8 @@ class Album extends Component {
           <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
           <button className="icon-play-pause">
              <td id="song-number">{index + 1}</td>
-             <span className="icon-play"></span>
-             <span className="icon-pause"></span>
+             <span className="ion-play"></span>
+             <span className="ion-pause"></span>
           </button>
              <td id>{song.title}</td>
              <td id>{song.duration}</td>
