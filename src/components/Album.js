@@ -45,6 +45,7 @@ class Album extends Component {
        this.play();
      }
    }
+
    render() {
      return (
        <div>
@@ -62,9 +63,14 @@ class Album extends Component {
            this.state.album.songs.map((song, index) =>
           <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
           <button className="play-pause">
-             <td id="song-number">{index + 1}</td>
-             <span className="ion-play"></span>
-             <span className="ion-pause"></span>
+             <td id="song-number">
+             {
+               song === this.state.currentSong ?
+                <span className={this.state.isPlaying ? 'ion-pause' : 'ion-play'}></span>
+               :
+                index + 1
+             }
+             </td>
           </button>
              <td id>{song.title}</td>
              <td id>{song.duration}</td>
