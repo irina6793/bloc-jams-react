@@ -12,7 +12,9 @@ class Album extends Component {
      this.state = {
        album: album,
        currentSong: album.songs[0],
-       isPlaying: false
+       isPlaying: false,
+       hover: true,
+       play: false,
   };
      this.audioElement = document.createElement('audio');
      this.audioElement.src = album.songs[0].audioSrc;
@@ -20,6 +22,14 @@ class Album extends Component {
    play() {
      this.audioElement.play();
      this.setState({ isPlaying: true });
+     if (this.state.play) {
+           this.setState({ play: false });
+           this.audio.pause();
+         } else {
+           this.setState({ play: true });
+           this.audio.play();
+         }
+       this.setState({play: !this.state.play});
    }
    pause() {
      this.audioElement.pause();
@@ -65,6 +75,7 @@ class Album extends Component {
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
+          <div onClick={this.play} className={!this.state.play ? "icon ion-play": "icon ion-pause"} />
         </table>
       </section>
     </div>
