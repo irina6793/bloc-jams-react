@@ -1,6 +1,10 @@
 .App p {
   color: blue;
   text-align: center;
+  margin: 40px;
+  padding-right: 20px;
+  height: 30px;
+  border: 5px dotted green;
 }
 
 .App-logo {

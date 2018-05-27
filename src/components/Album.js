@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import styles from './app.css';
+import styles from '../App.css';
 
 class Album extends Component {
   constructor(props) {
@@ -15,23 +15,19 @@ class Album extends Component {
        currentSong: album.songs[0],
        isPlaying: false,
        hover: true,
-       play: false,
+
   };
      this.audioElement = document.createElement('audio');
      this.audioElement.src = album.songs[0].audioSrc;
    }
    play() {
-     this.audioElement.play();
-     this.setState({ isPlaying: true });
-     if (this.state.play) {
-           this.setState({ play: false });
-           this.audio.pause();
-         } else {
-           this.setState({ play: true });
-           this.audio.play();
-         }
-       this.setState({play: !this.state.play});
-   }
+     if (this.state.isPlaying) {
+       this.pause()
+    } else {
+       this.audioElement.play();
+       this.setState({ isPlaying: true });
+     }
+ }
    pause() {
      this.audioElement.pause();
      this.setState({ isPlaying: false });
