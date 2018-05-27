@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import styles from './app.css';
 
 class Album extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class Album extends Component {
           {
            this.state.album.songs.map((song, index) =>
           <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-          <button className="icon-play-pause">
+          <button className="play-pause">
              <td id="song-number">{index + 1}</td>
              <span className="ion-play"></span>
              <span className="ion-pause"></span>
