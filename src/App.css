@@ -1,9 +1,11 @@
 .App p {
-  color: blue;
+  background-color: orange;
+  font-family: Lato;
+  display: flex;
   text-align: center;
-  margin: 40px;
+  width: 100px;
+  height: 150px;
   padding-right: 20px;
-  height: 30px;
   border: 5px dotted green;
 }
 
