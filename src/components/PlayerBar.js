@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-
- class PlayerBar extends Component {
+class PlayerBar extends Component {
    render() {
      return (
        <section className="player-bar">
@@ -30,10 +29,11 @@ import React, { Component } from 'react';
           <div className="total-time">{this.props.duration}</div>
          </section>
          <section id="volume-control">
-           <div className="icon ion-volume-low"></div>
+           <button id ="low" onClick={this.props.handlePrevClick}>
+           <span className="icon ion-volume-low"></span>
            <input type="range" className="seek-bar" value="80" />
            <div className="icon ion-volume-high"></div>
-         </section>
+
        </section>
      );
    }
