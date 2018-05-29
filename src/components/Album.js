@@ -18,6 +18,7 @@ class Album extends Component {
        duration: album.songs[0].duration,
        isPlaying: false,
        hover: true,
+       newIndex: 0,
 
   };
      this.audioElement = document.createElement('audio');
@@ -25,13 +26,10 @@ class Album extends Component {
    }
 
    play() {
-     if (this.state.isPlaying) {
-       this.pause()
-    } else {
        this.audioElement.play();
        this.setState({ isPlaying: true });
      }
- }
+ 
    pause() {
      this.audioElement.pause();
      this.setState({ isPlaying: false });
@@ -77,18 +75,12 @@ class Album extends Component {
        }
    handleNextClick() {
      const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-     const newIndex = Math.min(currentIndex + 1);
+     const newIndex = Math.min(currentIndex + 1, this.state.album.songs.length - 1);
      const newSong = this.state.album.songs[newIndex];
-     if (this.state.isPlaying && currentIndex) {
-       this.play();
-    } else {
-      if (!currentIndex)
-      this.pause()
-    }
      this.setSong(newSong);
      this.play();
+     }
 
-    }
    handleTimeChange(e) {
     const newTime = this.audioElement.duration * e.target.value;
     this.audioElement.currentTime = newTime;
@@ -109,9 +101,9 @@ class Album extends Component {
          <table id="song-list">
           {
            this.state.album.songs.map((song, index) =>
-          <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+          <tr className="song">
           <button className="play-pause">
-             <td id="song-number">
+             <td id="song-number" key={index} onClick={() => this.handleSongClick(song)} >
              {
                song === this.state.currentSong ?
                 <span className={this.state.isPlaying ? 'ion-pause' : 'ion-play'}></span>
