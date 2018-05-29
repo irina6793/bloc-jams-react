@@ -31,9 +31,13 @@ class PlayerBar extends Component {
          <section id="volume-control">
            <button id ="low" onClick={this.props.handlePrevClick}>
            <span className="icon ion-volume-low"></span>
-           <input type="range" className="seek-bar" value="80" />
-           <div className="icon ion-volume-high"></div>
-
+           </button>
+           <input type="range"
+            className="seek-bar"
+            value="80"
+            />
+           <span className="icon ion-volume-high"></span>
+          </section>
        </section>
      );
    }
