@@ -36,7 +36,7 @@ class PlayerBar extends Component {
             className="seek-bar"
             value= "1"
             max= "1"
-            min="1"
+            min="0"
             step="0.01"
             />
            <span className="icon ion-volume-high"></span>

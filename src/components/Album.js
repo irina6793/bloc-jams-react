@@ -19,9 +19,13 @@ class Album extends Component {
        isPlaying: false,
        hover: true,
        newIndex: 0,
-    
+       volume: 0,
+       mute: false,
+       orientation: true,
+       onChange: this.handleOnChange,
+       vertical: true,
 
-  };
+};
      this.audioElement = document.createElement('audio');
      this.audioElement.src = album.songs[0].audioSrc;
    }
@@ -139,8 +143,9 @@ class Album extends Component {
                    handlePrevClick={() => this.handlePrevClick()}
                    handleNextClick={() => this.handleNextClick()}
                    handleTimeChange={(e) => this.handleTimeChange(e)}
-                   direction={this.state.ControlDirection}
+                   direction={this.state.vertical}
                    volume={this.state.volume}
+
             />
 
        </section>
