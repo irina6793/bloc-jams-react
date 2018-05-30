@@ -92,11 +92,12 @@ class Album extends Component {
     this.setState({ currentTime: newTime });
   }
 
-  handleOnChange()  {
-    const newVolume = this.changeVolume
+  handleVolumeChange(e) {
+    const newVolume = e.target.value;
     this.changeVolume = newVolume;
-    this.setState({currentVolume:newVolume });
+    this.setState({currentVolume:newVolume })
   }
+
    render() {
      return (
        <div>
@@ -143,9 +144,7 @@ class Album extends Component {
                    handlePrevClick={() => this.handlePrevClick()}
                    handleNextClick={() => this.handleNextClick()}
                    handleTimeChange={(e) => this.handleTimeChange(e)}
-                   direction={this.state.vertical}
-                   volume={this.state.volume}
-
+                   onChange={this.props.handleVolumeChange}
             />
 
        </section>
