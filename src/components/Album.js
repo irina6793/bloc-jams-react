@@ -93,6 +93,7 @@ class Album extends Component {
   }
 
   handleVolumeChange(e) {
+    console.log("fired a volume change");
     const newVolume = e.target.value;
     this.changeVolume = newVolume;
     this.setState({currentVolume:newVolume })
