@@ -22,7 +22,7 @@ class Album extends Component {
        volume: 0,
        mute: false,
        orientation: true,
-       onChange: this.handleOnChange,
+       onChange: this.handleVolumeChange,
        vertical: true,
 
 };
@@ -144,7 +144,8 @@ class Album extends Component {
                    handlePrevClick={() => this.handlePrevClick()}
                    handleNextClick={() => this.handleNextClick()}
                    handleTimeChange={(e) => this.handleTimeChange(e)}
-                   onChange={this.props.handleVolumeChange}
+                   onChange={this.handleVolumeChange}
+                   volume={this.state.volume}
             />
 
        </section>
