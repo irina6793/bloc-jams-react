@@ -19,7 +19,7 @@ class Album extends Component {
        isPlaying: false,
        hover: true,
        newIndex: 0,
-       volume: 0,
+    
 
   };
      this.audioElement = document.createElement('audio');
@@ -139,8 +139,10 @@ class Album extends Component {
                    handlePrevClick={() => this.handlePrevClick()}
                    handleNextClick={() => this.handleNextClick()}
                    handleTimeChange={(e) => this.handleTimeChange(e)}
+                   direction={this.state.ControlDirection}
+                   volume={this.state.volume}
             />
-      
+
        </section>
     </div>
   )
