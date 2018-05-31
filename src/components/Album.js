@@ -12,6 +12,7 @@ class Album extends Component {
      });
 
      this.state = {
+      
        album: album,
        currentSong: album.songs[0],
        currentTime: 0,
@@ -93,10 +94,11 @@ class Album extends Component {
   }
 
   handleVolumeChange(e) {
-    console.log("fired a volume change");
+
     const newVolume = e.target.value;
     this.changeVolume = newVolume;
     this.setState({currentVolume:newVolume })
+    console.log("fired a volume change");
   }
 
    render() {
@@ -146,7 +148,7 @@ class Album extends Component {
                    handleNextClick={() => this.handleNextClick()}
                    handleTimeChange={(e) => this.handleTimeChange(e)}
                    onChange={this.handleVolumeChange}
-                   volume={this.state.volume}
+
             />
 
        </section>
