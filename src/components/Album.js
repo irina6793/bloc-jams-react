@@ -99,14 +99,14 @@ class Album extends Component {
     this.audioElement.volume = newVolume;
     this.setState({currentVolume:newVolume })
     console.log("fired a volume change");
+}
 
   formatTime() {
     const currentTime = e.target.value;
     this.audioElement.formatTime = newTime;
     this.setState({currentTime:seconds })
   }
-  }
-
+  
    render() {
      return (
        <div>
