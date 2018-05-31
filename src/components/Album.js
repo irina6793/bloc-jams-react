@@ -12,7 +12,7 @@ class Album extends Component {
      });
 
      this.state = {
-      
+
        album: album,
        currentSong: album.songs[0],
        currentTime: 0,
@@ -24,7 +24,7 @@ class Album extends Component {
        mute: false,
        orientation: true,
        onChange: this.handleVolumeChange,
-       vertical: true,
+       vertical: true
 
 };
      this.audioElement = document.createElement('audio');
@@ -94,11 +94,12 @@ class Album extends Component {
   }
 
   handleVolumeChange(e) {
-
     const newVolume = e.target.value;
-    this.changeVolume = newVolume;
+    this.audioElement.volume = newVolume;
     this.setState({currentVolume:newVolume })
     console.log("fired a volume change");
+
+
   }
 
    render() {
@@ -147,8 +148,9 @@ class Album extends Component {
                    handlePrevClick={() => this.handlePrevClick()}
                    handleNextClick={() => this.handleNextClick()}
                    handleTimeChange={(e) => this.handleTimeChange(e)}
-                   onChange={this.handleVolumeChange}
-
+                   handleVolumeChange={(e) => this.handleVolumeChange(e)}
+                   volume={this.state.currentVolume}
+                   audio={this.audioElement.volume}
             />
 
        </section>
