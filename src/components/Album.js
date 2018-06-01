@@ -24,7 +24,7 @@ class Album extends Component {
        orientation: true,
        onChange: this.handleVolumeChange,
        vertical: true,
-       formatTime: this.seconds,
+       formatTime: "M:SS",
 
 };
 

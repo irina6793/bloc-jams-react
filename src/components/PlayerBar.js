@@ -25,10 +25,7 @@ class PlayerBar extends Component {
             min="0"
             step="0.01"
             onChange={this.props.handleTimeChange}
-            minutes={this.props.minutes.value}
-            seconds="0"
-            strSeconds={this.props.seconds.value}
-
+            formatTime="M:SS"
           />
           <div className="total-time">{this.props.duration}</div>
          </section>
