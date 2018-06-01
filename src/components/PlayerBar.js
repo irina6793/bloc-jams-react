@@ -25,6 +25,10 @@ class PlayerBar extends Component {
             min="0"
             step="0.01"
             onChange={this.props.handleTimeChange}
+            minutes={this.props.minutes.value}
+            seconds="0"
+            strSeconds={this.props.seconds.value}
+
           />
           <div className="total-time">{this.props.duration}</div>
          </section>
@@ -39,9 +43,7 @@ class PlayerBar extends Component {
             min="0"
             step="0.01"
             onChange={this.props.handleVolumeChange}
-            seconds={M:SS}
-            
-            />
+              />
            <span className="icon ion-volume-high"></span>
           </section>
        </section>
