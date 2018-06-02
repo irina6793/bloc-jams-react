@@ -108,7 +108,6 @@ class Album extends Component {
       return minutes + ":" + 0 + seconds;
     }
     return minutes + ":" + seconds;
-    this.props.duration = seconds;
     }
 
    render() {
@@ -138,8 +137,8 @@ class Album extends Component {
              </td>
           </button>
              <td id>{song.title}</td>
-             <td id>{song.duration}</td>
-        </tr>
+             <td id>{this.formatTime(song.duration)} </td>
+         </tr>
          )
          }
            <colgroup>
@@ -162,7 +161,7 @@ class Album extends Component {
                    volume={this.state.currentVolume}
                    audio={this.audioElement.volume}
                    formatTime={this.formatTime}
-                   duration={this.duration}
+
         />
        </section>
     </div>
