@@ -24,7 +24,7 @@ class Album extends Component {
        orientation: true,
        onChange: this.handleVolumeChange,
        vertical: true,
-       seconds: formatTime
+
 };
 
      this.audioElement = document.createElement('audio');
@@ -102,9 +102,12 @@ class Album extends Component {
 
   formatTime(time) {
     const minutes = Math.floor(time / 60);
-    const seconds = (time % 60);
+    const seconds = Math.floor(time % 60);
+    if (seconds < 10) {
+      return minutes + ":" + 0 + seconds; 
+    }
     return minutes + ":" + seconds;
-}
+    }
 
    render() {
      return (
@@ -156,7 +159,7 @@ class Album extends Component {
                    handleFormatTime={(e) => this.handleFormatTime(e)}
                    volume={this.state.currentVolume}
                    audio={this.audioElement.volume}
-                   formatTime={(seconds) => this.formatTime(time)}
+                   formatTime={this.formatTime}
         />
        </section>
     </div>
