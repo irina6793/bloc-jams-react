@@ -25,6 +25,7 @@ class Album extends Component {
        onChange: this.handleVolumeChange,
        vertical: true,
 
+
 };
 
      this.audioElement = document.createElement('audio');
@@ -104,9 +105,10 @@ class Album extends Component {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     if (seconds < 10) {
-      return minutes + ":" + 0 + seconds; 
+      return minutes + ":" + 0 + seconds;
     }
     return minutes + ":" + seconds;
+    this.props.duration = seconds;
     }
 
    render() {
@@ -160,6 +162,7 @@ class Album extends Component {
                    volume={this.state.currentVolume}
                    audio={this.audioElement.volume}
                    formatTime={this.formatTime}
+                   duration={this.duration}
         />
        </section>
     </div>
