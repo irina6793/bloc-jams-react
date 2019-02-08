@@ -6,12 +6,12 @@ const Landing = () => (
 
     <section className="selling-points">
       <div className="point">
-        <h2 className="point-title">Choose your music</h2>
-        <p className="point-description">The world is full of music; why should you have to listen to music that someone else chose?</p>
+        <h2 className="point-title">Music Choices</h2>
+        <p className="point-description">The best music choices</p>
       </div>
       <div className="point">
         <h2 className="point-title">Unlimited, streaming, ad-free</h2>
-        <p className="point-description">No arbitrary limits. No distractions.</p>
+        <p className="point-description">No limits or distractions.</p>
       </div>
       <div className="point">
         <h2 className="point-title">Mobile enabled</h2>

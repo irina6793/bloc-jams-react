@@ -1,5 +1,5 @@
 .App p {
-  background-color: coral;
+  background-color: #92a8d1;
   font-family: Lato;
   display: text;
   text-align: center;
@@ -17,7 +17,7 @@
 }
 
 .App-logo  {
-  background-color: yellow;
+  background-color: rgb(201, 76, 76);
   animation: App-logo-spin infinite 20s linear;
   width: 50%;
   height: 80px;
@@ -27,7 +27,7 @@
 }
 
 .App-header  {
-  background-color: #222;
+  background-color: rgba(201, 76, 76, 0.3);
   width: 50%;
   height: 150px;
   padding: 20px;
@@ -37,7 +37,7 @@
 }
 
 .App-title {
-  background-color: orange;
+  background-color:  #fefbd8;
   width: 50%;
   height: 150px;
   font-size: 1.5em;
