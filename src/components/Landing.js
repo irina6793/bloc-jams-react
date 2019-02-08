@@ -11,11 +11,11 @@ const Landing = () => (
       </div>
       <div className="point">
         <h2 className="point-title">Unlimited, streaming, ad-free</h2>
-        <p className="point-description">No limits or distractions.</p>
+        <p className="point-description">No limits or distractions</p>
       </div>
       <div className="point">
         <h2 className="point-title">Mobile enabled</h2>
-        <p className="point-description">Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
+        <p className="point-description">Listen to your music on the go</p>
       </div>
     </section>
   </section>
