@@ -1,4 +1,4 @@
-##### Music Jams
+# Music Jams
 
 This is a playlist app that is built with React. This app utilizes HTML and CSS. In addition, this app contains media control features such as play, stop,
 and volume.
