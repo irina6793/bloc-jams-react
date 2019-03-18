@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Landing = () => (
   <section className="landing">
     <h1 className="hero-title">Turn the music up!</h1>
-
     <section className="selling-points">
       <div className="point">
         <h2 className="point-title">Music Choices</h2>
