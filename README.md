@@ -1,6 +1,6 @@
 # Music Jams
 
-https://safe-harbor-78757.herokuapp.com/
+https://is-music-jams.herokuapp.com/
 
 This is a playlist app that is built with React. This app utilizes HTML and CSS. In addition, this app contains media control features such as play, stop,
 and volume.
