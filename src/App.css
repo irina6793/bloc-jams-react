@@ -1,23 +1,25 @@
 .App p {
   text-align: center;
   border: 3px solid green;
-  background-color: #92a8d1;
-  font-family: "Source Sans Pro", "Arial", sans-serif;
-  display: inline-block;
-  width: 260px;
   height: 100px;
-  padding-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20em;
+  margin: 0;
   position: static;
+  padding: 20px;
+
+  background-color: #7e9a9a;
+  font-family: "Source Sans Pro", "Arial", sans-serif;
+
   flex-wrap: nowrap;
-  border-bottom: 2px solid;
-  align-self: center;
-  border-radius: 25px;
   float: center;
 }
 
 .App-logo {
   text-align: center;
-  background-color: rgb(201, 76, 76);
+  background-color: #f6d8ac;
   animation: App-logo-spin infinite 20s linear;
   width: 50%;
   height: 80px;

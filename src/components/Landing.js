@@ -6,7 +6,7 @@ const Landing = () => (
     <section className="selling-points">
       <div className="point">
         <h2 className="point-title">Music Choices</h2>
-        <p className="point-description">The best music choices</p>
+        <p className="point-description">Best music choices</p>
       </div>
       <div className="point">
         <h2 className="point-title">Unlimited, streaming, ad-free</h2>
@@ -14,7 +14,7 @@ const Landing = () => (
       </div>
       <div className="point">
         <h2 className="point-title">Mobile enabled</h2>
-        <p className="point-description">Listen to your music on the go</p>
+        <p className="point-description">Listen to your music</p>
       </div>
     </section>
   </section>
