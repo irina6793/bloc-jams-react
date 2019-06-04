@@ -9,10 +9,8 @@
   margin: 0;
   position: static;
   padding: 20px;
-
   background-color: #7e9a9a;
   font-family: "Source Sans Pro", "Arial", sans-serif;
-
   flex-wrap: nowrap;
   float: center;
 }
