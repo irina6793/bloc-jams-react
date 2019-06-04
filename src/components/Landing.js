@@ -2,11 +2,11 @@ import React from "react";
 
 const Landing = () => (
   <section className="landing">
-    <h1 className="hero-title">Turn the music up!</h1>
+    <h1 className="main-title">Turn the music up!</h1>
     <section className="selling-points">
       <div className="point">
         <h2 className="point-title">Music Choices</h2>
-        <p className="point-description">Best music choices</p>
+        <p className="point-description">Best Music Choices</p>
       </div>
       <div className="point">
         <h2 className="point-title">Unlimited, streaming, ad-free</h2>
