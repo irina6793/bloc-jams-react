@@ -43,6 +43,12 @@ class Album extends Component {
       },
       durationchange: e => {
         this.setState({ duration: this.audioElement.duration });
+      },
+      volumeupdate: e => {
+        this.setState({ currentVolume: this.audioElement.currentVolume });
+      },
+      volumefull: e => {
+        this.setState({ fullVolume: this.audioElement.fullVolume });
       }
     };
     this.audioElement.addEventListener(
@@ -52,6 +58,14 @@ class Album extends Component {
     this.audioElement.addEventListener(
       "durationchange",
       this.eventListeners.durationchange
+    );
+    this.audioElement.addEventListener(
+      "volumeupdate",
+      this.eventListeners.volumeupdate
+    );
+    this.audioElement.addEventListener(
+      "volumefull",
+      this.eventListeners.volumefull
     );
   }
 
@@ -65,6 +79,21 @@ class Album extends Component {
       "durationchange",
       this.eventListeners.durationchange
     );
+    this.audioElement.removeEventListener(
+      "volumeupdate",
+      this.eventListeners.volumeupdate
+    );
+    this.audioElement.removeEventListener(
+      "volumefull",
+      this.eventListeners.volumefull
+    );
+  }
+  hoverSongNumber(song) {
+    this.setState({ isHovering: true, currentHoveredSong: song });
+  }
+
+  leaveSongNumber() {
+    this.setState({ isHovering: false });
   }
 
   setSong(song) {
