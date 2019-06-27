@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class PlayerBar extends Component {
   render() {
     return (
-      <section className="player-bar">
-        <section id="buttons">
+      <div className="player-bar">
+        <div className="buttons">
           <button id="previous" onClick={this.props.handlePrevClick}>
             <span className="ion-skip-backward" />
           </button>
@@ -14,7 +14,7 @@ class PlayerBar extends Component {
           <button id="next" onClick={this.props.handleNextClick}>
             <span className="ion-skip-forward" />
           </button>
-        </section>
+        </div>
         <section id="time-control">
           <div className="current-time">
             {this.props.formatTime(this.props.currentTime)}{" "}
@@ -48,7 +48,7 @@ class PlayerBar extends Component {
           />
           <span className="icon ion-volume-high" />
         </section>
-      </section>
+      </div>
     );
   }
 }
