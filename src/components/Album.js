@@ -6,7 +6,6 @@ import PlayerBar from "./PlayerBar";
 class Album extends Component {
   constructor(props) {
     super(props);
-
     const album = albumData.find(album => {
       return album.slug === this.props.match.params.slug;
     });
@@ -16,14 +15,11 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
+      currentVolume: 0.75,
+      fullVolume: 1,
       isPlaying: false,
-      hover: true,
-      newIndex: 0,
-      volume: 0,
-      mute: false,
-      orientation: true,
-      onChange: this.handleVolumeChange,
-      vertical: true
+      ishovering: true,
+      currentHoverSong: null
     };
 
     this.audioElement = document.createElement("audio");
