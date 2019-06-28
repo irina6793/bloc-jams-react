@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import albumData from "./../data/albums";
-import styles from "../App.css";
 import PlayerBar from "./PlayerBar";
 
 class Album extends Component {
@@ -127,12 +126,9 @@ class Album extends Component {
     const currentIndex = this.state.album.songs.findIndex(
       song => this.state.currentSong === song
     );
-    const newIndex = Math.min(
-      currentIndex + 1,
-      this.state.album.songs.length - 1
-    );
+    const newIndex = Math.max(currentIndex + 1);
     const newSong = this.state.album.songs[newIndex];
-    this.setSong(newSong);
+    this.setSong(newSong || 0);
     this.play();
   }
 
@@ -146,7 +142,6 @@ class Album extends Component {
     const newVolume = e.target.value;
     this.audioElement.volume = newVolume;
     this.setState({ currentVolume: newVolume });
-    console.log("fired a volume change");
   }
 
   formatTime(time) {
