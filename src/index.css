@@ -1,10 +1,25 @@
 body {
+  align-items: center;
   background-color: #db9833;
-  width: 50%;
+  display: run-in;
+  font-family: "Roboto", sans-serif;
   height: 120px;
+  width: 50%;
   margin: 0;
-  padding: 16px;
-  font-family: sans-serif;
   text-align: center;
   float: left;
+  justify-content: center;
+}
+
+div .row {
+  padding: 25px;
+}
+
+div.album-details {
+  color: #ca1833;
+}
+
+table #song-list {
+  margin: auto;
+  color: white;
 }
