@@ -11,17 +11,23 @@ class App extends Component {
       <div className="App">
         <header>
           <h1 className="lead">Music Jams</h1>
-
-          <ul>
-            <Link to="/">Landing</Link>
-            <Link to="/library">Library</Link>
-          </ul>
+          <section>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/library">Library</Link>
+              </li>
+            </ul>
+          </section>
         </header>
         <main>
           <Route exact path="/" component={Landing} />
           <Route path="/library" component={Library} />
           <Route path="/album/:slug" component={Album} />
         </main>
+        <footer />
       </div>
     );
   }
