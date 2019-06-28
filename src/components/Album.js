@@ -155,49 +155,59 @@ class Album extends Component {
 
   render() {
     return (
-      <div className="album">
+      <section className="album">
         <section id="album-info">
-          <img
-            id="album-cover-art"
-            src={this.state.album.albumCover}
-            alt={this.state.album.title}
-          />
-          <div className="album-details">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
+          <div className="row">
+            <div className="col-md-4">
+              <img
+                id="album-cover-art"
+                src={this.state.album.albumCover}
+                alt={this.state.album.title}
+              />
+            </div>
+            <div className="col-md-2">
+              <div className="album-details">
+                <h1 id="album-title">{this.state.album.title}</h1>
+                <h2 className="artist">{this.state.album.artist}</h2>
+                <div id="release-info">{this.state.album.releaseInfo}</div>
+              </div>
+            </div>
+            <div className="col-md-2">
+              <table id="song-list">
+                <colgroup>
+                  <col id="song-number-column" />
+                  <col id="song-title-column" />
+                  <col id="song-duration-column" />
+                </colgroup>
+                <tbody>
+                  {this.state.album.songs.map((song, index) => (
+                    <tr className="song">
+                      <button className="play-pause">
+                        <td
+                          id="song-number"
+                          key={index}
+                          onClick={() => this.handleSongClick(song)}
+                        >
+                          {song === this.state.currentSong ? (
+                            <span
+                              className={
+                                this.state.isPlaying ? "ion-pause" : "ion-play"
+                              }
+                            />
+                          ) : (
+                            index + 1
+                          )}
+                        </td>
+                      </button>
+                      <td id>{song.title}</td>
+                      <td id>{this.formatTime(song.duration)} </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
-        <table id="song-list">
-          {this.state.album.songs.map((song, index) => (
-            <tr className="song">
-              <button className="play-pause">
-                <td
-                  id="song-number"
-                  key={index}
-                  onClick={() => this.handleSongClick(song)}
-                >
-                  {song === this.state.currentSong ? (
-                    <span
-                      className={
-                        this.state.isPlaying ? "ion-pause" : "ion-play"
-                      }
-                    />
-                  ) : (
-                    index + 1
-                  )}
-                </td>
-              </button>
-              <td id>{song.title}</td>
-              <td id>{this.formatTime(song.duration)} </td>
-            </tr>
-          ))}
-          <colgroup>
-            <col id="song-number-column" />
-            <col id="song-title-column" />
-            <col id="song-duration-column" />
-          </colgroup>
-        </table>
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
@@ -213,7 +223,7 @@ class Album extends Component {
           audio={this.audioElement.volume}
           formatTime={this.formatTime}
         />
-      </div>
+      </section>
     );
   }
 }
