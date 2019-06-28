@@ -2,8 +2,8 @@ import React from "react";
 
 const Landing = () => (
   <section className="landing">
-    <h1 className="main-title">Turn the music up!</h1>
     <section className="selling-points">
+      <h1 className="main-title">Turn the music up!</h1>
       <div className="point">
         <h2 className="point-title">Music Choices</h2>
         <p className="point-description">Best Music Choices</p>
