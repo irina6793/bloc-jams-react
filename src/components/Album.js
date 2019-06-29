@@ -181,24 +181,13 @@ class Album extends Component {
                 </colgroup>
                 <tbody>
                   {this.state.album.songs.map((song, index) => (
-                    <tr className="song">
-                      <button className="play-pause">
-                        <td
-                          id="song-number"
-                          key={index}
-                          onClick={() => this.handleSongClick(song)}
-                        >
-                          {song === this.state.currentSong ? (
-                            <span
-                              className={
-                                this.state.isPlaying ? "ion-pause" : "ion-play"
-                              }
-                            />
-                          ) : (
-                            index + 1
-                          )}
-                        </td>
-                      </button>
+                    <tr
+                      className="song"
+                      key={index}
+                      onClick={() => this.handleSongClick(song)}
+                      onMouseEnter={() => this.hoverSongNumber(song)}
+                      onMouseLeave={() => this.leaveSongNumber()}
+                    >
                       <td id>{song.title}</td>
                       <td id>{this.formatTime(song.duration)} </td>
                     </tr>
