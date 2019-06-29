@@ -45,23 +45,19 @@ class PlayerBar extends Component {
             <span className="ion-skip-forward" />
           </button>
         </section>
-
-        <div className="total-time">
-          {this.props.formatTime(this.props.duration)}
-        </div>
-
         <section id="volume-control">
-          <button id="low" onClick={this.props.handlePrevClick}>
-            <span className="icon ion-volume-low" />
-          </button>
-          <input
-            value={this.props.volume}
-            min="0"
-            step="0.01"
-            onChange={this.props.handleVolumeChange}
-          />
-          <span className="icon ion-volume-high" />
+          <div className="icon ion-volume-low" />
+          Volume: {this.props.currentVolume}
         </section>
+        <input
+          type="range"
+          className="seek-bar"
+          value={this.props.currentVolume}
+          max="1"
+          step="0.01"
+          onChange={this.props.handleVolumeChange}
+        />
+        <div className="icon ion-volume-high" />
       </section>
     );
   }
