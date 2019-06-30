@@ -29,6 +29,14 @@ table #song-list {
 section .player-bar {
   text-align: center;
   margin-top: 20px;
+  height: 75px;
+  box-sizing: border-box;
+  display: run-in;
+  align-items: center;
+  justify-content: center;
+  border-radius: 75px;
+  margin: auto;
+  pointer-events: all;
 }
 
 div .current-time {
