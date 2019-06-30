@@ -25,3 +25,36 @@ table #song-list {
   margin: auto;
   color: white;
 }
+
+section .player-bar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+div .current-time {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input {
+  background: transparent;
+  border: 1px solid rgb(243, 139, 114);
+  color: rgb(243, 139, 114);
+  width: 100px;
+  height: 35px;
+  font-size: 35px;
+  outline: none;
+
+  /*
+  position: relative;
+  bottom: 20;
+  left: 0;
+  width: 100px;
+  display: flex;
+  height: 80px;
+  box-sizing: border-box;
+  justify-content: border-box;
+  padding: 20px 0;
+  align-items: center;*/
+}
