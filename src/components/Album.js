@@ -14,10 +14,10 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
-      currentVolume: 0.75,
+      currentVolume: 0.5,
       fullVolume: 1,
       isPlaying: false,
-      ishovering: true,
+      ishovering: false,
       currentHoverSong: null
     };
 
@@ -87,6 +87,7 @@ class Album extends Component {
       this.eventListeners.volumefull
     );
   }
+
   hoverSongNumber(song) {
     this.setState({ isHovering: true, currentHoveredSong: song });
   }
