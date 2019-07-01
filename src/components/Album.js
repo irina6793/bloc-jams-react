@@ -133,6 +133,24 @@ class Album extends Component {
     this.play();
   }
 
+  displayIcons(song, index) {
+    if (
+      song === this.state.currentSong &&
+      this.state.isPlaying === true &&
+      this.state.isHovering === true
+    ) {
+      return <span className="icon ion-md-pause" />;
+    } else if (
+      song === this.state.currentHoveredSong &&
+      this.state.isPlaying === false &&
+      this.state.isHovering === true
+    ) {
+      return <span className="icon ion-md-play" />;
+    } else {
+      return index + 1;
+    }
+  }
+
   handleTimeChange(e) {
     const newTime = this.audioElement.duration * e.target.value;
     this.audioElement.currentTime = newTime;
@@ -145,7 +163,7 @@ class Album extends Component {
     this.setState({ currentVolume: newVolume });
   }
 
-  formatTime(time) {
+  formatTime(currentTime) {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     if (seconds < 10) {
