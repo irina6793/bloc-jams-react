@@ -154,12 +154,6 @@ class Album extends Component {
     this.setState({ currentTime: newTime });
   }
 
-  handleVolumeChange(e) {
-    const newVolume = e.target.value;
-    this.audioElement.volume = newVolume;
-    this.setState({ currentVolume: newVolume });
-  }
-
   formatTime(currentTime) {
     var s = Math.floor(currentTime % 60);
     var m = Math.floor(((currentTime * 1000) / (1000 * 60)) % 60);
@@ -168,6 +162,22 @@ class Album extends Component {
     strFormat = strFormat.replace(/M/, m);
     strFormat = strFormat.replace(/SS/, s);
     return strFormat;
+  }
+
+  formatDuration(currentTime) {
+    var s = Math.floor(currentTime % 60);
+    var m = Math.floor(((currentTime * 1000) / (1000 * 60)) % 60);
+    var strFormat = "M:SS";
+    if (s < 10) s = "0" + s;
+    strFormat = strFormat.replace(/M/, m);
+    strFormat = strFormat.replace(/SS/, s);
+    return strFormat;
+  }
+
+  handleVolumeChange(e) {
+    const newVolume = e.target.value;
+    this.audioElement.volume = newVolume;
+    this.setState({ currentVolume: newVolume });
   }
 
   render() {
