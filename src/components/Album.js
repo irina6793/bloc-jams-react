@@ -25,16 +25,6 @@ class Album extends Component {
     this.audioElement.src = album.songs[0].audioSrc;
   }
 
-  play() {
-    this.audioElement.play();
-    this.setState({ isPlaying: true });
-  }
-
-  pause() {
-    this.audioElement.pause();
-    this.setState({ isPlaying: false });
-  }
-
   componentDidMount() {
     this.eventListeners = {
       timeupdate: e => {
@@ -67,7 +57,6 @@ class Album extends Component {
       this.eventListeners.volumefull
     );
   }
-
   componentWillUnmount() {
     this.audioElement.src = null;
     this.audioElement.removeEventListener(
@@ -87,13 +76,21 @@ class Album extends Component {
       this.eventListeners.volumefull
     );
   }
-
   hoverSongNumber(song) {
     this.setState({ isHovering: true, currentHoveredSong: song });
   }
-
   leaveSongNumber() {
     this.setState({ isHovering: false });
+  }
+
+  play() {
+    this.audioElement.play();
+    this.setState({ isPlaying: true });
+  }
+
+  pause() {
+    this.audioElement.pause();
+    this.setState({ isPlaying: false });
   }
 
   setSong(song) {
