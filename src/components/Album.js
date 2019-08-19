@@ -164,12 +164,13 @@ class Album extends Component {
   }
 
   formatTime(currentTime) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    if (seconds < 10) {
-      return minutes + ":" + 0 + seconds;
-    }
-    return minutes + ":" + seconds;
+    var s = Math.floor(currentTime % 60);
+    var m = Math.floor(((currentTime * 1000) / (1000 * 60)) % 60);
+    var strFormat = "M:SS";
+    if (s < 10) s = "0" + s;
+    strFormat = strFormat.replace(/M/, m);
+    strFormat = strFormat.replace(/SS/, s);
+    return strFormat;
   }
 
   render() {
