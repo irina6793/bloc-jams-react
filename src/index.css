@@ -32,11 +32,18 @@ section .player-bar {
   height: 75px;
   box-sizing: border-box;
   display: run-in;
+  color: rgba(4, 26, 278, 34);
   align-items: center;
   justify-content: center;
   border-radius: 75px;
   margin: auto;
   pointer-events: all;
+}
+
+section #time-control {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
 }
 
 div .current-time {
