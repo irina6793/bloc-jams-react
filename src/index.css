@@ -82,3 +82,12 @@ a:hover {
 a:active {
   color: blue;
 }
+
+@media only screen and (max-width: 600px) {
+  album-info {
+    max-width: 200px;
+  }
+  div.col-md-4 {
+    padding-top: 5%;
+  }
+}
